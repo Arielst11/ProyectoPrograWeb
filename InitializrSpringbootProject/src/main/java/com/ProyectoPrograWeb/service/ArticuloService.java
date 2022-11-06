@@ -1,0 +1,18 @@
+package com.ProyectoPrograWeb.service;
+
+import com.ProyectoPrograWeb.domain.Articulo;
+import java.util.List;
+
+public interface ArticuloService {
+    
+    //Los métodos para hacer un CRUD de la tabla articulo
+    //Create Read Update Delete
+    
+    public List<Articulo> getArticulos(boolean activos);
+    
+    public Articulo getArticulo(Articulo articulo);
+    
+    public void save(Articulo articulo);
+    
+    public void delete(Articulo articulo);
+}

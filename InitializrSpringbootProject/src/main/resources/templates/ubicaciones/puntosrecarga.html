@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+  
+    </head>
+    
+    <header><h1>Tienda de Vehículos eléctricos</h1></header>
+    
+    <body>
+    
+        <nav>
+            <ul>        
+                    <li>
+                        <a th:href="@{/articulo/listado}" >
+                            Articulos</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/ubicaciones/puntosrecarga}" >
+                            Puntos de recarga</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/ubicaciones/puntosmantenimiento}" >
+                            Mantenimiento</a>
+                    </li>
+                <li>
+                        <a th:href="@{/}" >
+                            Inicio</a>
+                    </li>
+   
+            </ul>       
+        </nav>
+        <hr>
+            <h2> Bienvenidos </h2>
+            <div>
+                <p>En esta página se muestran algunos puntos de recarga para vehículos eléctricos</p>   
+            </div>
+             <hr>
+                 <section>
+                     <article>
+                         <p class='titulo_punto_recarga'>Parqueo Cínica Bíblica</p>    
+                         <img src="https://photos.plugshare.com/photos/579858.jpg" class="imagen_punto_recarga">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.017127389691!2d-84.08151801743058!3d9.927045462528705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e368160b054f%3A0xfdf9862edebb836d!2sParqueo%20Cl%C3%ADnica%20B%C3%ADblica!5e0!3m2!1ses!2scr!4v1667702345985!5m2!1ses!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe_punto_recarga"></iframe>     
+                         <p class='precio_punto_recarga'>Precio</p>  
+                         <p>Pago requerido 3000 colones por hora de carga más la hora de parqueo cuesta ¢1.300</p>
+                     </article>  
+                 </section>
+                    
+        
+        
+    </body>
+    
+    
+</html>

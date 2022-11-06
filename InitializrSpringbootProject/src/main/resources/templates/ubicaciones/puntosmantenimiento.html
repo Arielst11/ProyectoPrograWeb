@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+  
+    </head>
+    
+    <header><h1>Tienda de Vehículos eléctricos</h1></header>
+    
+    <body>
+    
+        <nav>
+            <ul>        
+                    <li>
+                        <a th:href="@{/articulo/listado}" >
+                            Articulos</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/ubicaciones/puntosrecarga}" >
+                            Puntos de recarga</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/ubicaciones/puntosmantenimiento}" >
+                            Mantenimiento</a>
+                    </li>
+                <li>
+                        <a th:href="@{/}" >
+                            Inicio</a>
+                    </li>
+   
+            </ul>       
+        </nav>
+        <hr>
+            <h2> Puntos de Mantenimiento </h2>
+            <div>
+                <p>En esta página se muestran algunos puntos de mantenimiento para vehículos eléctricos</p>   
+            </div>
+           <hr>    
+        <section>
+                     <article>
+                         <p class='titulo_punto_mantenimiento'>Euro Taller Calderón</p>    
+                         <img src=https://www.tallercalderon.com/wp-content/uploads/2018/07/Euro-taller-calderon.jpg class="imagen_punto_mantenimiento">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1968.344371615746!2d-83.684265!3d9.360787!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa14e869b8790a1%3A0xd0fba84ef4ca579d!2sEuro%20Taller%20Calder%C3%B3n!5e0!3m2!1sen!2scr!4v1667702789692!5m2!1sen!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe_punto_mantenimiento"></iframe>    
+                         <p class='info_punto_mantenimiento'>Desde 1984 brindando calidad y soluciones al sector automotriz. Con los mejores equipos y personal altamente capacitados.</p>  
+                         <p></p>
+                     </article>  
+                 </section>
+              
+    </body>
+    
+    
+</html>
