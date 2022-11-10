@@ -1,50 +1,26 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
+
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TODO supply a title</title>
+        <title>Tienda de vehículos electricos</title>
         <meta charset="UTF-8">
-  
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
     </head>
     
-    <header><h1>Tienda de Vehículos eléctricos</h1></header>
-    
     <body>
-    
-        <nav>
-            <ul>        
-                    <li>
-                        <a th:href="@{/articulo/listado}" >
-                            Articulos</a>
-                    </li>
-                    <li>
-                        <a th:href="@{/ubicaciones/puntosrecarga}" >
-                            Puntos de recarga</a>
-                    </li>
-                    <li>
-                        <a th:href="@{/ubicaciones/puntosmantenimiento}" >
-                            Mantenimiento</a>
-                    </li>
-                  <li>
-                        <a th:href="@{/}" >
-                            Inicio</a>
-                    </li>
-                
-   
-            </ul>       
-        </nav>
+    <header th:replace="layout/plantilla :: header"/>
+        
         <hr>
-            <h2> Bienvenidos </h2>
-            <div>
+            
+            <div class="contenido">
+                 <h2> Bienvenidos </h2>
                 <p>Esta es una página de venta de repuestos donde se podrá encontrar información importante a vehículos eléctricos</p>
                 
             </div>
             
-        
+                
+   <footer th:replace="layout/plantilla :: footer"/>
         
         
     </body>
