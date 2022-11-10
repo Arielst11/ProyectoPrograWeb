@@ -4,10 +4,11 @@
     <head>
         <title>TechShop</title>
         <meta charset="UTF-8"/> 
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
       
     </head>
     <body>
-        <a th:href="@{/}">Inicio</a>
+        <header th:replace="layout/plantilla :: header"/>
         
          <div class ="contenido"> 
         <h2>Información de Articulo</h2>
@@ -40,6 +41,6 @@
             <input type="submit" value="Guardar" name="guardar"/>            
         </form> 
          </div>
-         <footer/>  
+           <footer th:replace="layout/plantilla :: footer"/>   
     </body>
 </html>

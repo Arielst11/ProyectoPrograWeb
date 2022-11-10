@@ -2,17 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TechShop</title>
-        <meta charset="UTF-8"/>   
+        <title>Tienda de vehículos eléctricos</title>
+        <meta charset="UTF-8"/> 
+         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
       
     </head>
+    
     <body>
-        
-        
-      <a th:href="@{/}">Inicio</a>
+        <header th:replace="layout/plantilla :: header"/>
                               
-        <div> 
+        <div class="contenido"> 
+            <hr/>
         <h2>Articulos disponibles</h2>
+        
         <a th:href="@{/articulo/nuevo}">Nuevo Articulo</a>
         <div th:if="${articulos !=null and !articulos.empty}">
             <table border="1">
@@ -39,6 +41,7 @@
             <h2>No hay articulos disponibles</h2>
         </div>
         </div>
-        <footer/>  
+       <footer th:replace="layout/plantilla :: footer"/> 
+        
     </body>
 </html>
