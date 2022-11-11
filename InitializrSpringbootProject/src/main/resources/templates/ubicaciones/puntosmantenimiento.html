@@ -6,36 +6,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TODO supply a title</title>
+        <title>Tienda de vehículos eléctricos</title>
         <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
   
     </head>
-    
-    <header><h1>Tienda de Vehículos eléctricos</h1></header>
+   
     
     <body>
     
-        <nav>
-            <ul>        
-                    <li>
-                        <a th:href="@{/articulo/listado}" >
-                            Articulos</a>
-                    </li>
-                    <li>
-                        <a th:href="@{/ubicaciones/puntosrecarga}" >
-                            Puntos de recarga</a>
-                    </li>
-                    <li>
-                        <a th:href="@{/ubicaciones/puntosmantenimiento}" >
-                            Mantenimiento</a>
-                    </li>
-                <li>
-                        <a th:href="@{/}" >
-                            Inicio</a>
-                    </li>
-   
-            </ul>       
-        </nav>
+        <header th:replace="layout/plantilla :: header"/>
         <hr>
             <h2> Puntos de Mantenimiento </h2>
             <div>
@@ -51,6 +31,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                          <p></p>
                      </article>  
                  </section>
+               
+               <footer th:replace="layout/plantilla :: footer"/> 
               
     </body>
     
