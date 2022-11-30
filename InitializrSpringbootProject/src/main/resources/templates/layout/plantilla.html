@@ -3,40 +3,53 @@
       xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Tienda de vehículos eléctricos</title>
-        <meta charset="UTF-8"/>
-
+        <meta charset="UTF-8"/>   
+        <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
+        <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+        <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>   
     </head>
     <body>
 
         <header th:fragment="header" class="header">
             <nav class="nav">
-                <a th:href="@{/}" class="logo nav-link">Tienda de vehículos eléctricos</a>
+                <a th:href="@{/}" class="logo nav-link">[[#{aplicacion.titulo}]]</a>
                 <ul class="nav-menu">
+                 
+                    <li class="nav-menu-item">
+                        <a th:href="@{/articulo/listado}" class="nav-menu-link nav-link">[[#{plantilla.articulos}]]</a>
+
+                    </li>
+
+                    <li class="nav-menu-item">
+                        <a th:href="@{/ubicaciones/puntosrecarga}" class="nav-menu-link nav-link">[[#{categoria.puntos}]]</a>
+
+                    </li>
                     
                     <li class="nav-menu-item">
-                        <a th:href="@{/articulo/listado}" class="nav-menu-link nav-link">Articulos</a>
+                        <a th:href="@{/ubicaciones/puntosmantenimiento}" class="nav-menu-link nav-link">[[#{categoria.mantenimiento}]]</a>
 
                     </li>
 
                     <li class="nav-menu-item">
-                        <a th:href="@{/ubicaciones/puntosrecarga}" class="nav-menu-link nav-link">Puntos de recarga</a>
-
-                    </li>
+                        <form method ="POST" th:action="@{/logout}">
+                            <a href="#" onclick="this.parentNode.submit();" class="nav-menu-link nav-link" >
+                                <i class="nav-menu-link nav-link"></i>[[#{plantilla.logout}]]</a>
+                        </form>
+                    </li>   
                     
-                    <li class="nav-menu-item">
-                        <a th:href="@{/ubicaciones/puntosmantenimiento}" class="nav-menu-link nav-link">Mantenimiento</a>
-
-                    </li>
-
-
+                
                 </ul>
             </nav>
 
         </header>
 
-        <footer th:fragment="footer" class="footer">
-            <p>&COPY; Derechos Reservados 2022</p>
-
+        <footer>
+            <p class="lead text-center">&COPY; [[#{plantilla.derechos}]] |  
+            <a th:href="@{/(lang=es)}">ES</a> |
+            <a th:href="@{/(lang=en)}">EN</a>   
+            </p>
         </footer>
 
     </body>
