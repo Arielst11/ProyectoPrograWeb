@@ -5,25 +5,43 @@
     <head>
         <title>Tienda de vehículos electricos</title>
         <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+            
+         <head th:replace="layout/plantilla :: head">
+        
     </head>
     
     <body>
     <header th:replace="layout/plantilla :: header"/>
         
         <hr>
-            
             <div class="contenido">
-                 <h2> Bienvenidos </h2>
-                <p>Esta es una página de venta de repuestos donde se podrá encontrar información importante a vehículos eléctricos</p>
-                
+                 <h2> [[#{plantilla.saludo}]] </h2>   
+                <h3 class="text-center">[[#{plantilla.articulos}]]</h3>  
+                  <hr>
             </div>
-            
+          
+            <div class="container">
+            <h2>[[#{index.titulo}]]</h2>            
+            <div class="row row-cols-3" th:if="${articulos !=null and !articulos.empty}">
+                <div class="card" th:each="articulo : ${articulos}">
+                    <div class="card-body">
+                        <h5 class="card-title">[[${articulo.descripcion}]]</h5>
+                        <h6 class="card-subtitle mb-2 text-muted text-end">
+                            [[${#numbers.formatDecimal(articulo.precio,3,2)}]]</h6>
+                        <a class="card-link" th:href="@{/carrito/agregar/} + ${articulo.idArticulo}">[[#{accion.agregar}]]</a>
+                        <p class="card-text">esto es un objeto de la base de datos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div th:if="${articulos ==null or articulos.empty}">
+                <h2>[[#{articulo.no_mostrar}]]</h2>
+            </div>
+        </div>
                 
-   <footer th:replace="layout/plantilla :: footer"/>
+ 
         
-        
+        <footer th:replace="layout/plantilla :: footer"/>
     </body>
-    
     
 </html>

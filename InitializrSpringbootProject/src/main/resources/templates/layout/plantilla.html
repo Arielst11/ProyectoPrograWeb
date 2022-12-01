@@ -3,7 +3,8 @@
       xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Tienda de vehículos eléctricos</title>
-        <meta charset="UTF-8"/>   
+        <meta charset="UTF-8"/>
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
         <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}"/>
         <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
@@ -12,30 +13,36 @@
     </head>
     <body>
 
-        <header th:fragment="header" class="header">
-            <nav class="nav">
-                <a th:href="@{/}" class="logo nav-link">[[#{aplicacion.titulo}]]</a>
-                <ul class="nav-menu">
+        <header th:fragment="headercss" class="headercss">
+            <nav class="navcss">
+                <h1 class="logocss nav-linkcss">[[#{aplicacion.titulo}]]<i class="bi bi-tools"></i> </h1>
                  
-                    <li class="nav-menu-item">
-                        <a th:href="@{/articulo/listado}" class="nav-menu-link nav-link">[[#{plantilla.articulos}]]</a>
+                <ul class="nav-menucss">
+                    
+                    <li class="nav-menu-itemcss">
+                        <a th:href="@{/}" class="nav-menu-linkcss nav-linkcss">[[#{plantilla.articulos}]]</a>
+
+                    </li>
+                 
+                    <li class="nav-menu-itemcss">
+                        <a th:href="@{/articulo/listado}" class="nav-menu-linkcss nav-linkcss" sec:authorize="hasRole('ROLE_ADMIN')">[[#{plantilla.articulos.editar}]]</a>
 
                     </li>
 
-                    <li class="nav-menu-item">
-                        <a th:href="@{/ubicaciones/puntosrecarga}" class="nav-menu-link nav-link">[[#{categoria.puntos}]]</a>
+                    <li class="nav-menu-itemcss">
+                        <a th:href="@{/ubicaciones/puntosrecarga}" class="nav-menu-linkcss nav-linkcss">[[#{categoria.puntos}]]</a>
 
                     </li>
                     
-                    <li class="nav-menu-item">
-                        <a th:href="@{/ubicaciones/puntosmantenimiento}" class="nav-menu-link nav-link">[[#{categoria.mantenimiento}]]</a>
+                    <li class="nav-menu-itemcss">
+                        <a th:href="@{/ubicaciones/puntosmantenimiento}" class="nav-menu-linkcss nav-linkcss">[[#{categoria.mantenimiento}]]</a>
 
                     </li>
 
-                    <li class="nav-menu-item">
+                    <li class="nav-menu-itemcss">
                         <form method ="POST" th:action="@{/logout}">
-                            <a href="#" onclick="this.parentNode.submit();" class="nav-menu-link nav-link" >
-                                <i class="nav-menu-link nav-link"></i>[[#{plantilla.logout}]]</a>
+                            <a href="#" onclick="this.parentNode.submit();" class="nav-menu-linkcss nav-linkcss" >
+                                <i class="nav-menu-linkcss nav-linkcss"></i>[[#{plantilla.logout}]]</a>
                         </form>
                     </li>   
                     
@@ -45,12 +52,11 @@
 
         </header>
 
-        <footer>
+    </body>
+    <footer>
             <p class="lead text-center">&COPY; [[#{plantilla.derechos}]] |  
             <a th:href="@{/(lang=es)}">ES</a> |
             <a th:href="@{/(lang=en)}">EN</a>   
             </p>
         </footer>
-
-    </body>
 </html>

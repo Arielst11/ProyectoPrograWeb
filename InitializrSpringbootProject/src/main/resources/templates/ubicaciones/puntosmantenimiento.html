@@ -8,7 +8,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <head>
         <title>Tienda de vehículos eléctricos</title>
         <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
+         <head th:replace="layout/plantilla :: head">
   
     </head>
    
@@ -22,15 +22,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 <p>En esta página se muestran algunos puntos de mantenimiento para vehículos eléctricos</p>   
             </div>
            <hr>    
-        <section>
-                     <article>
-                         <p class='titulo_punto_mantenimiento'>Euro Taller Calderón</p>    
-                         <img src=https://www.tallercalderon.com/wp-content/uploads/2018/07/Euro-taller-calderon.jpg class="imagen_punto_mantenimiento">
-                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1968.344371615746!2d-83.684265!3d9.360787!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa14e869b8790a1%3A0xd0fba84ef4ca579d!2sEuro%20Taller%20Calder%C3%B3n!5e0!3m2!1sen!2scr!4v1667702789692!5m2!1sen!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe_punto_mantenimiento"></iframe>    
-                         <p class='info_punto_mantenimiento'>Desde 1984 brindando calidad y soluciones al sector automotriz. Con los mejores equipos y personal altamente capacitados.</p>  
-                         <p></p>
-                     </article>  
-                 </section>
+          
+               <div class="container">
+            <h2>[[#{mantenimiento.puntos}]]</h2>              
+            <div class="row row-cols-3">
+                
+                   <div class="card"  >
+                   <h5 class="card-title" >Euro Taller Calderón</h5>     
+                   <img  width="400" height="300" src="https://www.tallercalderon.com/wp-content/uploads/2018/07/Euro-taller-calderon.jpg" alt="Card image cap">
+                   <hr>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1968.344371615746!2d-83.684265!3d9.360787!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa14e869b8790a1%3A0xd0fba84ef4ca579d!2sEuro%20Taller%20Calder%C3%B3n!5e0!3m2!1sen!2scr!4v1667702789692!5m2!1sen!2scr" width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe_punto_mantenimiento"></iframe>
+                   <div class="card-body">
+                   <p class="card-text">Desde 1984 brindando calidad y soluciones al sector automotriz. Con los mejores equipos y personal altamente capacitados.</p>
+                   <a href="https://www.tallercalderon.com" class="btn btn-primary">[[#{mantenimiento.informacion}]]</a>
+                   </div>
+                   </div>
+                   </div>
+            
+            
+            
+            
+            
+               </div>
+               
+               
+       
                
                <footer th:replace="layout/plantilla :: footer"/> 
               
