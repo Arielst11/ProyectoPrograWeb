@@ -83,9 +83,20 @@
          <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
-            <version>0.46</version>
+            <version>0.46</version>   
         </dependency>
+            
+          <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.6.0</version> 
+          </dependency>
         
+        <dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>popper.js</artifactId>
+    <version>1.12.9-1</version>
+</dependency>
                 
 	</dependencies>
 

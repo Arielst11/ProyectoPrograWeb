@@ -38,6 +38,11 @@
                         <a th:href="@{/ubicaciones/puntosmantenimiento}" class="nav-menu-linkcss nav-linkcss">[[#{categoria.mantenimiento}]]</a>
 
                     </li>
+                    
+                    <li class="nav-menu-itemcss">
+                        <a th:href="@{/carrito/listado}" class="nav-menu-linkcss nav-linkcss">[[#{carrito.verCarrito}]]</a>
+
+                    </li>
 
                     <li class="nav-menu-itemcss">
                         <form method ="POST" th:action="@{/logout}">

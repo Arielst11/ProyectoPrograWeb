@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml">
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
     <head>
         <title>Tienda de vehículos electricos</title>
         <meta charset="UTF-8">
          <head th:replace="layout/plantilla :: head">
-    
+        
     </head>
     
     <body>
     <header th:replace="layout/plantilla :: header"/>
-    <hr>
-    <section th:replace="carrito/fragmentosCarrito :: listadoArticulos"> 
+
+    <section th:replace="carrito/fragmentosCarrito :: listadoCarrito">
+    
     <footer th:replace="layout/plantilla :: footer"/>
-    <script>
-     function addCard(formulario){
-     var valor=formulario.elements[0].value;
-     var url = '/carrito/agregar';
-     url = url + '/' +valor;
-     $("#resultsBlock").load(url);
-     }
-    </script>   
     
     </body>
-    
 </html>
