@@ -6,10 +6,25 @@
         <title>Tienda de vehículos electricos</title>
         <meta charset="UTF-8">
          <head th:replace="layout/plantilla :: head">
-        
+     <script>
+     function addCard(formulario){
+     var valor=formulario.elements[0].value;
+     var url = '/carrito/agregar';
+     url = url + '/' +valor;
+     $("#resultsBlock").load(url);
+     }
+    </script>    
     </head>
     
     <body>
+     <script>
+     function addCard(formulario){
+     var valor=formulario.elements[0].value;
+     var url = '/carrito/agregar';
+     url = url + '/' +valor;
+     $("#resultsBlock").load(url);
+     }
+    </script>      
     <header th:replace="layout/plantilla :: header"/>
 
     <section th:replace="carrito/fragmentosCarrito :: listadoCarrito">

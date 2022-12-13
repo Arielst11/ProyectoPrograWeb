@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org"
       xmlns:sec="http://thymeleaf.org/extras/spring-security">
  <head>
         <title>Tienda de vehículos eléctricos</title>
@@ -38,7 +38,8 @@
                         <h6 class="card-subtitle mb-2 text-muted text-end">
                             [[${#numbers.formatDecimal(articulo.precio,3,2)}]]</h6>
                         <p class="card-text">Curabitur fringilla luctus ex, ullamcorper tristique massa volutpat sed. Nam accumsan orci sit amet porta luctus. Nulla tempor, tortor vulputate elementum malesuada, tortor erat accumsan lacus, ac sagittis urna leo vitae dui. Ut vitae nunc lobortis, finibus est nec, accumsan purus. In bibendum, justo id fermentum tincidunt, nibh enim sollicitudin lectus, interdum vestibulum eros ex tincidunt magna. Sed non est vulputate ipsum eleifend finibus. Mauris tincidunt viverra arcu, ut lobortis turpis blandit eget. Aliquam mattis in lectus ac vulputate. Quisque ac massa lacinia, imperdiet elit ac, aliquet neque. Nunc tempus ex diam.</p>
-                     <form>
+                    
+                        <form>
                             <input type="hidden" name="texto" th:value="${articulo.idArticulo}"/>
                             <input type="hidden" name="texto" th:value="${articulo.existencias}"/>
                             <button class="btn btn-light"
@@ -49,6 +50,7 @@
                                 <i class="fas fa-cart-plus"></i>
                             </button>       
                         </form>
+                        
                     </div>
                 </div>
             </div>
@@ -100,17 +102,19 @@
                                            <td class="text-center">[[${new java.text.DecimalFormat('# ###,##0').format(item.cantidad)}]]</td>
                                            <td class="text-center">[[${new java.text.DecimalFormat('# ###,##0.00').format(item.cantidad*item.precio)}]]</td>
                                            <td>
-                                           <a th:herf="@{/carrito/eliminar/}+${item.idArticulo}"
+                                           <a th:href="@{/carrito/eliminar/}+${item.idArticulo}"
                                               class="btn btn-danger">
                                                <i class="fas fa-trash"></i>[[#{accion.eliminar}]]
                                            </a>
                                            </td>
+                                           <!--      
                                            <td>
                                             <a th:herf="@{/carrito/modificar/}+${item.idArticulo}"
                                               class="btn btn-success">
                                                <i class="fas fa-pencil"></i>[[#{accion.actualizar}]]
                                            </a>   
                                            </td>
+                                           comment --> 
                                        </tr>
                                    </tbody>
                                </table>

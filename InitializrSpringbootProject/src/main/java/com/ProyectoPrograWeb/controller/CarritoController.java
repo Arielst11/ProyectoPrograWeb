@@ -58,13 +58,14 @@ public class CarritoController {
  }        
  
  
+ /*
  @GetMapping ("/carrito/modificar/{idArticulo}")
  public String modificarCarrito (Item item, Model model){
      item = itemService.getItem(item);
      model.addAttribute("Item", item);
      return "/carrito/modificar";
  }
- 
+ */
   @GetMapping ("/carrito/eliminar/{idArticulo}")
   public String eliminarItem(Item item){
       itemService.delete(item);
